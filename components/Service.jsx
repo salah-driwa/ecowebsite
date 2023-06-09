@@ -40,7 +40,7 @@ function Service() {
     <div className=' flex flex-col sm:flex-row py-10  sm:divide-x bg-white justify-center sm:px-32 sm:py-16 ' style={{textAlign: 'center'}}>
 
       {services.map((service,index) => (
-        <Section  x={0} scale={0.8} duration={0.6}  delay={index * 0.2} >
+        <Section  x={0} scale={0.8} duration={0.6}  delay={index * 0.2} key={service.title} >
         <div key={service.title} className=' p-3 sm:p-16' >
             <div className='m-0 ' ><service.icon /></div>
           

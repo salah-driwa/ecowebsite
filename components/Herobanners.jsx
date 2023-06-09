@@ -136,7 +136,7 @@ const Herobanners = ({ Herobanner }) => {
       <div><img src='/asets/bg.png' className='  static ' /></div>
       <div className=' relative   bottom-0   top-0  text-7xl  h-auto z-50 flex justify-center'>
        {Herobanner.map((banner, index) => (
-        <motion.button  className=' h-1 text-white'
+        <motion.button  className=' h-1 text-white' key={index}
         initial={{opacity:0.4}}
          animate={currentSlide === index ? "visible" :"hidden"}
         variants={variants}   whileHover={{opacity:1}} onClick={() =>goto(index)}>

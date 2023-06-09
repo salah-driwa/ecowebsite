@@ -11,7 +11,7 @@ const Footerlink = ({ product }) => {
             <ul>
             
               {item.content.map((link, index) => (
-                <Section delay={0.09 *index}>
+                <Section delay={0.09 *index} key={index}>
                 <li key={index} className="">
                   <a className="text-light font-basicgothic font-thin text-sm "  href={link.link}>{link.label}</a>
                 </li>

@@ -20,7 +20,7 @@ const Carditem = ({ cards ,totalprice ,shipitems  }) => {
 
   return (
     <div className=' '>
-      {cards.map((card) => ( <div  className='my-10'>
+      {cards.map((card) => ( <div  className='my-10' key={card.id} >
         <Card key={card.id} image={card.image} name={card.name} quantity={card.quantity} price={card.price} />
        
        </div>

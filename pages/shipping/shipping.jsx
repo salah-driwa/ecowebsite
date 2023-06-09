@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useStateContext } from '@/components/context/StateContext';
 import { Layout } from '@/components';
 import { motion } from 'framer-motion';
@@ -9,8 +8,8 @@ import {AiFillHome} from 'react-icons/ai';
 import {FaStore} from "react-icons/fa"
 import Pcard from '@/components/products/shopcards/Pay-cards';
 import Payform from './Paymentform';
-function shipping() {
-
+import { useState, useEffect } from 'react';
+function Shipping() {
     const [buttonHovered ,setButtonHovered] = useState(false);
     const { cartsItems ,totalprice ,shipitems } = useStateContext();
   return (
@@ -138,10 +137,8 @@ function shipping() {
 </h1>
 
 
-    {cartsItems.map((card) => ( <div  className='py-1'>
-     <Pcard key={card.id} image={card.image} name={card.name} quantity={card.quantity} price={card.price} />
-   
-   
+    {cartsItems.map((card) => ( <div  key={card.id} className='py-1'>
+     <Pcard key={card.id} image={card.image} name={card.name} quantity={card.quantity} price={card.price} /> 
    </div>
   ))}
 <div className=" w-11/12 h-px bg-gray-300 m-auto mb-2"></div>

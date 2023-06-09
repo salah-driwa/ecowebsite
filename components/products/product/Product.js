@@ -11,7 +11,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 
 
-const product = ({ Products, productname }) => {
+const Product = ({ Products, productname }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('');
 
@@ -90,8 +90,8 @@ const product = ({ Products, productname }) => {
       <div className='flex  flex-wrap justify-center   sm:mx-14 m-auto  sm:justify-items-center'>
                 {sortedProducts.map((product,index) => (
                   
-                  <div className=''>
-                    <Section delay={index*0.2} x={0} y={100} scale={0.6}>
+                  <div className='' key={product._id}>
+                    <Section delay={index*0.2} x={0} y={100} scale={0.6} >
              <Card_laptop key={product._id} id={product._id} product={product}  type={productname}/> 
              </Section>
              </div>
@@ -101,4 +101,4 @@ const product = ({ Products, productname }) => {
   );
 };
 
-export default product;
+export default Product;

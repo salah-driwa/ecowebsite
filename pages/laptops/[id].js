@@ -151,7 +151,7 @@ const LaptopPage = ({ laptop, randomLaptops }) => {
             
             className='flex  gap-10 flex-wrap justify-center m-6'>
               {randomLaptops.map((laptop,index) => (
-                <Section opacity={0} delay={index*0.3}>
+                <Section opacity={0} delay={index*0.3} key={laptop._id}>
               
                 <Card_laptop key={laptop._id} id={laptop._id} product={laptop} type={"laptops"} />
                 </Section>
