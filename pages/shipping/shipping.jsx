@@ -163,4 +163,4 @@ function Shipping() {
   )
 }
 
-export default shipping
+export default Shipping
