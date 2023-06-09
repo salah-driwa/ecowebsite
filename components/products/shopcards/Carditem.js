@@ -11,7 +11,7 @@ const Carditem = ({ cards ,totalprice ,shipitems  }) => {
     if (!session) {
     signIn();
     } else {
-      router.push('/shipping/shipping');
+      router.push('/shipping/Shipping');
     }
   };
 
