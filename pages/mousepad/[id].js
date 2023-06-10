@@ -38,7 +38,7 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
         <div className='flex flex-col sm:flex-row justify-around sm:mx-10'>
           <div className='flex flex-col sm:flex-col justify-center sm:p-10'>
           <Section x={0} scale={0.5}>
-              {mousepad.image && mousepad.image.length > 0 && (
+              {mousepad.image && (
                 <motion.div
                   className='relative sm:w-[400px] sm:h-[300px] w-10/12 m-auto h-60'
                   animate={{ opacity: 1 }}

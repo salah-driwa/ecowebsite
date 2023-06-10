@@ -51,7 +51,7 @@ const LaptopPage = ({ laptop, randomLaptops }) => {
           <div className='flex flex-col sm:flex-col justify-center  sm:p-10 '>
          
           <Section x={0} scale={0.5}>
-            {laptop.image && laptop.image.length > 0 ? (
+            {laptop.image &&  (
               <motion.div
                 className='relative sm:w-[400px] sm:h-[300px] w-10/12 m-auto h-60'
                 animate={{ opacity: 1 }}
@@ -69,8 +69,7 @@ const LaptopPage = ({ laptop, randomLaptops }) => {
                   transition={{ duration: 0.2 }}
                 />
               </motion.div>
-            ) : (
-              <div>No image available</div>
+            
             )}
           </Section>
             <div className='sm:p-10 p-6 m-auto flex gap-16'>

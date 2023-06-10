@@ -46,18 +46,17 @@ const PcPage = ({ pc, randompcs }) => {
                   initial={{ opacity: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  <Image
+                  <motion.img
                     key={currentIndex}
-                    src={urlfor(pc.image[currentIndex]).url()}
+                    src={urlfor(pc.image[currentIndex])}
                     alt={pc.name}
                     className='absolute top-0 left-0 w-full h-full object-cover rounded-xl'
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='center'
+                    style={{ objectPosition: 'center' }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2 }}
                   />
+                 
 
                 </motion.div>
               )}
