@@ -12,16 +12,16 @@ function ProductDetails({laptops,gamingpc,keybords,mousepad}) {
 
   switch (slug) {
     case 'gaming-laptop':
-      productComponent = <Product Products={laptops}  productname={'laptops'}/>;
+      productComponent = <Product Products={laptops}  productname={'Laptops'}/>;
       break;
     case 'gaming-desktop':
-      productComponent = <Product Products={gamingpc}  productname={'gamingpc'}/>;
+      productComponent = <Product Products={gamingpc}  productname={'Gamingpc'}/>;
       break;
     case 'keybord':
       productComponent = <Product Products={keybords}  productname={'keybords'}/>;
       break;
     case 'mouse':
-      productComponent = <Product Products={mousepad}  productname={'mousepad'}/>;
+      productComponent = <Product Products={mousepad}  productname={'Mousepad'}/>;
       break;
     default:
       productComponent = <div>Invalid product type</div>;
