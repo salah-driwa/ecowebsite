@@ -45,7 +45,7 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
                   initial={{ opacity: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  <motion.img
+                  {/*<img
                     key={currentIndex}
                     src={urlfor(mousepad.image[currentIndex]).url()}
                     alt={mousepad.name}
@@ -54,7 +54,7 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2 }}
-                  />
+              />*/}
                 </motion.div>
               )}
             </Section>

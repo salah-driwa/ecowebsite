@@ -46,7 +46,7 @@ const PcPage = ({ pc, randompcs }) => {
                   initial={{ opacity: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  <motion.img
+                  {/*<img
                     key={currentIndex}
                     src={urlfor(pc.image[currentIndex])}
                     alt={pc.name}
@@ -56,7 +56,7 @@ const PcPage = ({ pc, randompcs }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.2 }}
                   />
-                 
+              */}
 
                 </motion.div>
               )}

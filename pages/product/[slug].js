@@ -4,7 +4,7 @@ import Product from '@/components/products/product/Product';
 import { useRouter } from 'next/router';
 import react from 'react';
 import { Layout } from '@/components';
-function ProductDetails({laptops,gamingpc,keybords,mousepad}) {
+function ProductDetails({laptops,gamingpc,keybord,mousepad}) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -18,7 +18,7 @@ function ProductDetails({laptops,gamingpc,keybords,mousepad}) {
       productComponent = <Product Products={gamingpc}  productname={'Gamingpc'}/>;
       break;
     case 'keybord':
-      productComponent = <Product Products={keybords}  productname={'keybords'}/>;
+      productComponent = <Product Products={keybord}  productname={'Keybords'}/>;
       break;
     case 'mouse':
       productComponent = <Product Products={mousepad}  productname={'Mousepad'}/>;
@@ -44,12 +44,12 @@ export const getServerSideProps = async () => {
     const gamingpc = await client.fetch(query2);
   
     const query4='*[_type == "keybords"]';
-    const keybords = await client.fetch(query4);
+    const keybord = await client.fetch(query4);
     const query5='*[_type == "mousepad"]';
     const mousepad = await client.fetch(query5);
   
     return {
-      props:{laptops,gamingpc,keybords,mousepad}
+      props:{laptops,gamingpc,keybord,mousepad}
     }
   }
 
