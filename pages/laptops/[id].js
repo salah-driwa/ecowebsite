@@ -50,30 +50,29 @@ const LaptopPage = ({ laptop, randomLaptops }) => {
         <div className='flex flex-col sm:flex-row  justify-around sm:mx-10'>
           <div className='flex flex-col sm:flex-col justify-center  sm:p-10 '>
          
-       <Section x={0} scale={0.5}>
-        {laptop.image && (
-  <motion.div
-    className="relative  sm:w-[400px] sm:h-[300px]   w-10/12 m-auto  h-60 "
-    animate={{ opacity: 1 }}
-    initial={{ opacity: 0 }}
-   
-    transition={{ duration: 1 }}
-  >
-    <motion.img
-      key={currentIndex}
-      src={urlfor(laptop.image[currentIndex])}
-      alt={laptop.name}
-      className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
-      style={{ objectPosition: 'center' }}
-      initial={{ opacity: 0 ,scale:0.9  }}
-      animate={{ opacity: 1 ,scale:1}}
-      
-      transition={{ duration: 0.2 }}
-    />
-  </motion.div>
-)}
-
-</Section>   
+          <Section x={0} scale={0.5}>
+            {laptop.image && laptop.image.length > 0 ? (
+              <motion.div
+                className='relative sm:w-[400px] sm:h-[300px] w-10/12 m-auto h-60'
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <motion.img
+                  key={currentIndex}
+                  src={urlfor(laptop.image[currentIndex])}
+                  alt={laptop.name}
+                  className='absolute top-0 left-0 w-full h-full object-cover rounded-xl'
+                  style={{ objectPosition: 'center' }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </motion.div>
+            ) : (
+              <div>No image available</div>
+            )}
+          </Section>
             <div className='sm:p-10 p-6 m-auto flex gap-16'>
             <Section x={0} scale={0.5}>
               <motion.button onClick={prevImage} className='w-7' whileHover={{ scale: 1.1 }}>

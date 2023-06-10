@@ -37,8 +37,8 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
       <div className='mb-20 pt-36'>
         <div className='flex flex-col sm:flex-row justify-around sm:mx-10'>
           <div className='flex flex-col sm:flex-col justify-center sm:p-10'>
-            <Section x={0} scale={0.5}>
-              {mousepad.image && (
+          <Section x={0} scale={0.5}>
+              {mousepad.image && mousepad.image.length > 0 && (
                 <motion.div
                   className='relative sm:w-[400px] sm:h-[300px] w-10/12 m-auto h-60'
                   animate={{ opacity: 1 }}
@@ -47,7 +47,7 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
                 >
                   <motion.img
                     key={currentIndex}
-                    src={urlfor(mousepad.image[currentIndex])}
+                    src={urlfor(mousepad.image[currentIndex]).url()}
                     alt={mousepad.name}
                     className='absolute top-0 left-0 w-full h-full object-cover rounded-xl'
                     style={{ objectPosition: 'center' }}
@@ -58,7 +58,6 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
                 </motion.div>
               )}
             </Section>
-
             <div className='sm:p-10 p-6 m-auto flex gap-16'>
               <Section x={0} scale={0.5}>
                 <motion.button onClick={prevImage} className='w-7' whileHover={{ scale: 1.1 }}>
@@ -137,6 +136,8 @@ const MousepadPage = ({ mousepad, randommousepads }) => {
     </Layout>
   );
 };
+
+// Rest of the code remains the same
 
 export const getStaticPaths = async () => {
   const query = '*[_type == "mousepad"]{slug}';
